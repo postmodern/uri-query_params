@@ -31,10 +31,10 @@ Gem::Specification.new do |s|
      "lib/uri/query_params/extensions/http.rb",
      "lib/uri/query_params/mixin.rb",
      "lib/uri/query_params/query_params.rb",
-     "lib/uri_query_params.rb",
      "spec/extensions/http_spec.rb",
      "spec/query_params_spec.rb",
-     "spec/spec_helper.rb"
+     "spec/spec_helper.rb",
+     "uri-query_params.gemspec"
   ]
   s.has_rdoc = %q{yard}
   s.homepage = %q{http://github.com/postmodern/uri-query_params}
