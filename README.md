@@ -6,7 +6,8 @@
 
 ## Description
 
-Allows access to the query component of the URI as a Hash.
+Allows access to the query component of the URI as a Hash. This is similar
+to `$_GET` from PHP, except available on any {URI::HTTP} object.
 
 ## Examples
 

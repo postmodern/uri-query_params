@@ -6,8 +6,8 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = 'uri-query_params'
     gem.license = 'MIT'
-    gem.summary = %Q{}
-    gem.description = %Q{}
+    gem.summary = %Q{Access the query parameters of a URI, just like $_GET in PHP.}
+    gem.description = %Q{Allows access to the query component of the URI as a Hash.}
     gem.email = 'postmodern.mod3@gmail.com'
     gem.homepage = 'http://github.com/postmodern/uri-query_params'
     gem.authors = ['Postmodern']
