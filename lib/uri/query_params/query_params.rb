@@ -8,7 +8,7 @@ module URI
     # @param [String] query_string
     #   The URI query string.
     #
-    # @return [Hash]
+    # @return [Hash{String => String}]
     #   The parsed query parameters.
     #
     def QueryParams.parse(query_string)
