@@ -42,7 +42,7 @@ describe URI::QueryParams do
     end
 
     it "can contain empty params" do
-      subject['z'].should be_nil
+      subject['z'].should be_empty
     end
   end
 end

@@ -21,7 +21,7 @@ module URI
           if value
             query_params[name] = URI.decode(value)
           else
-            query_params[name] = nil
+            query_params[name] = ''
           end
         end
       end
