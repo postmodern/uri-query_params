@@ -9,18 +9,8 @@ module URI
     # of a URI.
     #
     module Mixin
-      # Query parameters
-      attr_accessor :query_params
-
-      #
-      # Creates a new URI::HTTP object and initializes query_params as a
-      # new Hash.
-      #
-      def initialize(*args)
-        super(*args)
-
-        parse_query_params
-      end
+      # Allows setting the query_params.
+      attr_writer :query_params
 
       #
       # Sets the query string and updates query_params.
@@ -42,6 +32,17 @@ module URI
       end
 
       #
+      # The query params of the URI.
+      #
+      # @return [Hash{String => String}]
+      #   The query params of the URI.
+      #
+      def query_params
+        parse_query_params unless @query_params
+        return @query_params
+      end
+
+      #
       # Iterates over every query parameter.
       #
       # @yield [name, value]
@@ -59,7 +60,7 @@ module URI
       #   end
       #
       def each_query_param(&block)
-        @query_params.each(&block)
+        query_params.each(&block)
       end
 
       protected
@@ -75,25 +76,31 @@ module URI
       private
 
       def path_query
-        str = @path
+        if @query_params
+          str = @path
 
-        unless @query_params.empty?
-          str += '?' + @query_params.to_a.map { |name,value|
-            if value==true
-              "#{name}=active"
-            elsif value
-              if value.kind_of?(Array)
-                "#{name}=#{CGI.escape(value.join(' '))}"
+          unless @query_params.empty?
+            str += '?' + @query_params.to_a.map { |name,value|
+              if value==true
+                "#{name}=active"
+              elsif value
+                if value.kind_of?(Array)
+                  "#{name}=#{CGI.escape(value.join(' '))}"
+                else
+                  "#{name}=#{CGI.escape(value.to_s)}"
+                end
               else
-                "#{name}=#{CGI.escape(value.to_s)}"
+                "#{name}="
               end
-            else
-              "#{name}="
-            end
-          }.join('&')
-        end
+            }.join('&')
+          end
 
-        return str
+          str
+        else
+          # do not rebuild the path-query, if the query_params have not
+          # been parsed yet
+          super
+        end
       end
     end
   end
