@@ -17,7 +17,6 @@ Inspecting the URI query_params:
     url.query_params
     # => {"btnG"=>"Search", "hs"=>"1HY", "rls"=>"org.mozilla:en-US:official", "client"=>"firefox-a", "hl"=>"en", "q"=>"bob+ross"}
 
-
     url.query_params['q']
     # => "bob+ross"
 
