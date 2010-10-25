@@ -1,0 +1,4 @@
+lib/**/*.rb
+- 
+ChangeLog.*
+LICENSE.txt
