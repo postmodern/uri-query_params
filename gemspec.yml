@@ -8,7 +8,6 @@ email: postmodern.mod3@gmail.com
 has_yard: true
 
 development_dependencies:
-  ore: ~> 0.2.0
-  ore-tasks: ~> 0.1.2
-  yard: ~> 0.6.0
+  ore-tasks: ~> 0.2.0
   rspec: ~> 2.0.0
+  yard: ~> 0.6.0
