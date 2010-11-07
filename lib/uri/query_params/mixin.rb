@@ -76,23 +76,11 @@ module URI
       private
 
       def path_query
-        if @query_params
+        unless (@query_params.nil? || @query_params.empty?)
           str = @path
 
           unless @query_params.empty?
-            str += '?' + @query_params.to_a.map { |name,value|
-              if value==true
-                "#{name}=active"
-              elsif value
-                if value.kind_of?(Array)
-                  "#{name}=#{CGI.escape(value.join(' '))}"
-                else
-                  "#{name}=#{CGI.escape(value.to_s)}"
-                end
-              else
-                "#{name}="
-              end
-            }.join('&')
+            str += '?' + QueryParams.dump(@query_params)
           end
 
           str

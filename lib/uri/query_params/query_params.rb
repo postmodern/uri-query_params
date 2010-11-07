@@ -29,5 +29,38 @@ module URI
       return query_params
     end
 
+    #
+    # Dumps the URI query params.
+    #
+    # @param [Hash{String => String}] query_params
+    #   The query params.
+    #
+    # @return [String]
+    #   The dumped URI query string.
+    #
+    # @since 0.5.0
+    #
+    def QueryParams.dump(query_params)
+      query = []
+
+      query_params.each do |name,value|
+        param = if value == true
+                  "#{name}=active"
+                elsif value
+                  if value.kind_of?(Array)
+                    "#{name}=#{CGI.escape(value.join(' '))}"
+                  else
+                    "#{name}=#{CGI.escape(value.to_s)}"
+                  end
+                else
+                  "#{name}="
+                end
+
+        query << param
+      end
+
+      return query.join('&')
+    end
+
   end
 end
