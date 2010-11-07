@@ -44,16 +44,15 @@ module URI
       query = []
 
       query_params.each do |name,value|
-        param = if value == true
+        param = case value
+                when Array
+                  "#{name}=#{CGI.escape(value.join(' '))}"
+                when true
                   "#{name}=active"
-                elsif value
-                  if value.kind_of?(Array)
-                    "#{name}=#{CGI.escape(value.join(' '))}"
-                  else
-                    "#{name}=#{CGI.escape(value.to_s)}"
-                  end
-                else
+                when false, nil
                   "#{name}="
+                else
+                  "#{name}=#{CGI.escape(value.to_s)}"
                 end
 
         query << param
