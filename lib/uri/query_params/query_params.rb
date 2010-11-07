@@ -16,7 +16,7 @@ module URI
 
       if query_string
         query_string.split('&').each do |param|
-          name, value = param.split('=')
+          name, value = param.split('=',2)
 
           if value
             query_params[name] = URI.decode(value)
