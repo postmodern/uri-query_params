@@ -1,7 +1,5 @@
 require 'uri/query_params/query_params'
 
-require 'cgi'
-
 module URI
   module QueryParams
     #
