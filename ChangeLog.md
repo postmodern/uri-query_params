@@ -1,3 +1,8 @@
+### 0.5.1 / 2010-11-11
+
+* Added {URI::QueryParam::Mixin#initialize_copy} to properly copy the
+  `query_params` when calling `clone` or `dup` on a URI.
+
 ### 0.5.0 / 2010-11-07
 
 * Added {URI::QueryParams.dump}.
