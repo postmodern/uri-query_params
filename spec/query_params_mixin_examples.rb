@@ -4,19 +4,18 @@ require 'uri/query_params'
 require 'uri'
 
 shared_examples_for "URI::QueryParams::Mixin" do
-  let(:raw_query) { 'x=1&y=one%20two&z' }
-  let(:normalized_query) { 'x=1&y=one+two&z=' }
+  let(:query) { 'x=1&y=one%20two&z' }
 
   subject { uri }
 
-  before(:each) { uri.query = raw_query }
+  before(:each) { uri.query = query }
 
   it "should include QueryParams" do
     subject.class.should include(URI::QueryParams::Mixin)
   end
 
   it "should still provide access to #query" do
-    uri.query.should == normalized_query
+    uri.query.should == query
   end
 
   it "should provide #query_params" do

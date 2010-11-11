@@ -60,7 +60,7 @@ module URI
       def query=(raw_query)
         new_query = super(raw_query)
 
-        parse_query_params
+        parse_query_params if @query_params
         return new_query
       end
 
@@ -109,7 +109,7 @@ module URI
       private
 
       def path_query
-        unless (@query_params.nil? || @query_params.empty?)
+        unless @query_params.nil? || @query_params.empty?)
           str = @path
 
           unless @query_params.empty?
