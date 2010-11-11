@@ -1,6 +1,6 @@
 module URI
   module QueryParams
     # uri-query_params version
-    VERSION = '0.5.0'
+    VERSION = '0.5.1'
   end
 end
