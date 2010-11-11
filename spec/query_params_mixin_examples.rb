@@ -29,6 +29,13 @@ shared_examples_for "URI::QueryParams::Mixin" do
     subject.to_s.match(/\?(.+)$/)[1].should == "x=1%262&y=one%3Dtwo&z=%3F"
   end
 
+  it "should deep-copy the query_params Hash" do
+    original = subject.query_params.object_id
+
+    subject.dup.query_params.object_id.should_not == original
+    subject.clone.query_params.object_id.should_not == original
+  end
+
   describe "#query_params" do
     subject { uri.query_params }
 

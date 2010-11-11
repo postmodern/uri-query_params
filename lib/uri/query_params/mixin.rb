@@ -13,6 +13,22 @@ module URI
       attr_writer :query_params
 
       #
+      # Deep-copies the {#query_params} from another URL.
+      #
+      # @param [Mixin] url
+      #   The other URL to deep-copy the query_params from.
+      #
+      # @since 0.5.1
+      #
+      def initialize_copy(url)
+        if (params = url.instance_variable_get('@query_params'))
+          @query_params = params.dup
+        end
+
+        super(url)
+      end
+
+      #
       # Sets the query string and updates query_params.
       #
       # @param [String] query_str
