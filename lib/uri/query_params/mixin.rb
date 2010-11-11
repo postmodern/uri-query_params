@@ -29,6 +29,22 @@ module URI
       end
 
       #
+      # The raw query-string.
+      #
+      # @return [String, nil]
+      #   The raw query-string.
+      #
+      # @since 0.5.2
+      #
+      def query
+        if @query_params
+          QueryParams.dump(@query_params)
+        else
+          super
+        end
+      end
+
+      #
       # Sets the query string and updates query_params.
       #
       # @param [String] query_str
@@ -41,8 +57,9 @@ module URI
       #   url.query = 'a=1&b=2'
       #   # => "a=1&b=2"
       #
-      def query=(query_str)
-        new_query = super(query_str)
+      def query=(raw_query)
+        new_query = super(raw_query)
+
         parse_query_params
         return new_query
       end
