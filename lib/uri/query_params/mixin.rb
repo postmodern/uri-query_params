@@ -109,7 +109,7 @@ module URI
       private
 
       def path_query
-        unless @query_params.nil? || @query_params.empty?)
+        if @query_params
           str = @path
 
           unless @query_params.empty?
