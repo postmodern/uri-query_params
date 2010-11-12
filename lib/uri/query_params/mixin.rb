@@ -58,7 +58,7 @@ module URI
       def query=(raw_query)
         new_query = super(raw_query)
 
-        parse_query_params if @query_params
+        parse_query_params! if @query_params
         return new_query
       end
 
@@ -69,7 +69,7 @@ module URI
       #   The query params of the URI.
       #
       def query_params
-        parse_query_params unless @query_params
+        parse_query_params! unless @query_params
         return @query_params
       end
 
@@ -100,7 +100,9 @@ module URI
       # Parses the query parameters from the query data, populating
       # query_params with the parsed parameters.
       #
-      def parse_query_params
+      # @since 0.5.2
+      #
+      def parse_query_params!
         @query_params = QueryParams.parse(@query)
       end
 
