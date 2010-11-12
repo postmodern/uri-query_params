@@ -1,7 +1,7 @@
 # URI query_params
 
-* [github.com/postmodern/uri-query_params](http://github.com/postmodern/uri-query_params/)
-* [github.com/postmodern/uri-query_params/issues](http://github.com/postmodern/uri-query_params/issues/)
+* [Source](http://github.com/postmodern/uri-query_params/)
+* [Issues](http://github.com/postmodern/uri-query_params/issues/)
 * Postmodern (postmodern.mod3 at gmail.com)
 
 ## Description
