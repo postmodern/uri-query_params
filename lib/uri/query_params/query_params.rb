@@ -2,6 +2,12 @@ require 'uri'
 
 module URI
   module QueryParams
+    # RFC 3986 unsafe characters (including ' ')
+    UNSAFE = [
+      ' ', '!', '*', "'", '(', ')', ';', ':', '@', '&', '=', '+', '$', ',',
+      '/', '?', '%', '#', '[', ']'
+    ].join
+
     #
     # Parses a URI query string.
     #
@@ -19,7 +25,7 @@ module URI
           name, value = param.split('=',2)
 
           if value
-            query_params[name] = URI.decode(value)
+            query_params[name] = URI.unescape(value)
           else
             query_params[name] = ''
           end
@@ -44,18 +50,18 @@ module URI
       query = []
 
       query_params.each do |name,value|
-        param = case value
+        value = case value
                 when Array
-                  "#{name}=#{CGI.escape(value.join(' '))}"
+                  URI.escape(value.join(' '),UNSAFE)
                 when true
-                  "#{name}=active"
+                  'active'
                 when false, nil
-                  "#{name}="
+                  ''
                 else
-                  "#{name}=#{CGI.escape(value.to_s)}"
+                  URI.escape(value.to_s,UNSAFE)
                 end
 
-        query << param
+        query << "#{name}=#{value}"
       end
 
       return query.join('&')

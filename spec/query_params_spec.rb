@@ -62,7 +62,7 @@ describe URI::QueryParams do
     end
 
     it "should dump query params with Array values" do
-      subject.dump({'x' => [1,2]}).should == 'x=1+2'
+      subject.dump({'x' => [1,2]}).should == 'x=1%202'
     end
 
     it "should dump multiple query params" do
