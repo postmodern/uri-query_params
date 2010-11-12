@@ -32,6 +32,8 @@ module URI
       # @return [String, nil]
       #   The raw query-string.
       #
+      # @see QueryParams.dump
+      #
       # @since 0.5.2
       #
       def query
@@ -55,6 +57,8 @@ module URI
       #   url.query = 'a=1&b=2'
       #   # => "a=1&b=2"
       #
+      # @see QueryParams.parse
+      #
       def query=(raw_query)
         new_query = super(raw_query)
 
@@ -67,6 +71,8 @@ module URI
       #
       # @return [Hash{String => String}]
       #   The query params of the URI.
+      #
+      # @see QueryParams.parse
       #
       def query_params
         parse_query_params! unless @query_params
@@ -99,6 +105,8 @@ module URI
       #
       # Parses the query parameters from the query data, populating
       # query_params with the parsed parameters.
+      #
+      # @see QueryParams.parse
       #
       # @since 0.5.2
       #

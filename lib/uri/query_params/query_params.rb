@@ -17,6 +17,14 @@ module URI
     # @return [Hash{String => String}]
     #   The parsed query parameters.
     #
+    # @example
+    #   QueryParams.parse("x=1&y=2")
+    #   # => {"x"=>"1", "y"=>"2"}
+    #
+    # @example
+    #   QueryParams.parse("x=a%20b%20c&y")
+    #   # => {"x"=>"a b c", "y"=>""}
+    #
     def QueryParams.parse(query_string)
       query_params = {}
 
@@ -43,6 +51,18 @@ module URI
     #
     # @return [String]
     #   The dumped URI query string.
+    #
+    # @example Dumping Strings
+    #   QueryParams.dump('x' => '1', 'y' => '2')
+    #   # => "x=1&x=2"
+    #
+    # @example Dumping non-Strings
+    #   QueryParams.dump(:x => 1, :y => true, :z => false)
+    #   # => "x=1&x=active&z="
+    #
+    # @example Dumping Arrays
+    #   QueryParams.dump(:x => ['a','b','c'])
+    #   # => "x=a%20b%20c"
     #
     # @since 0.5.0
     #
