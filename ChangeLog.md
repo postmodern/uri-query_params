@@ -1,3 +1,15 @@
+### 0.5.2 / 2010-11-11
+
+* Added {URI::QueryParams::UNSAFE}:
+  * Contains RFC 3986 unsafe URI characters.
+  * Use {URI::QueryParams::UNSAFE} in {URI::QueryParams.dump} for safer
+    query strings.
+* Added {URI::QueryParams::Mixin#query}:
+  * If any query-params are set, dump them out using
+    {URI::QueryParams.dump}.
+* Renamed `parse_query_params` to
+  {URI::QueryParams::Mixin#parse_query_params!}.
+
 ### 0.5.1 / 2010-11-11
 
 * Added {URI::QueryParams::Mixin#initialize_copy} to properly copy the
