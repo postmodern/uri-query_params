@@ -1,8 +1,9 @@
 # URI query_params
 
-* [Source](http://github.com/postmodern/uri-query_params/)
-* [Issues](http://github.com/postmodern/uri-query_params/issues/)
-* Postmodern (postmodern.mod3 at gmail.com)
+* [Source](http://github.com/postmodern/uri-query_params)
+* [Issues](http://github.com/postmodern/uri-query_params/issues)
+* [Documentation](http://rubydoc.info/gems/uri-query_params/frames)
+* [Email](mailto:postmodern.mod3 at gmail.com)
 
 ## Description
 
@@ -34,5 +35,6 @@ Setting the URI query_params:
 
 ## License
 
-See {file:LICENSE.txt} for license information.
+Copyright (c) 2010-2011 Hal Brodigan
 
+See {file:LICENSE.txt} for license information.
