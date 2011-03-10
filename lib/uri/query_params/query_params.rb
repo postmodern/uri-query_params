@@ -1,4 +1,4 @@
-require 'uri'
+require 'uri/common'
 
 module URI
   module QueryParams
