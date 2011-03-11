@@ -1,3 +1,7 @@
+### 0.5.3 / 2011-03-11
+
+* Only require `uri/common` for `URI.escape` and `URI.unescape`.
+
 ### 0.5.2 / 2010-11-11
 
 * Added {URI::QueryParams::UNSAFE}:
