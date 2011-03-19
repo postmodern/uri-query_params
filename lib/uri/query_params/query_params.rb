@@ -30,6 +30,9 @@ module URI
 
       if query_string
         query_string.split('&').each do |param|
+          # skip empty params
+          next if param.empty?
+
           name, value = param.split('=',2)
 
           if value

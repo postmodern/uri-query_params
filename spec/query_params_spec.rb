@@ -9,6 +9,10 @@ describe URI::QueryParams do
       subject.parse('').should be_empty
     end
 
+    it "should not parse empty params" do
+      subject.parse('a&&&b').should == {'a' => '', 'b' => ''}
+    end
+
     it "should parse a single query param name" do
       subject.parse('x').should have_key('x')
     end
