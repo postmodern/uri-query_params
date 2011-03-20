@@ -1,3 +1,7 @@
+### 0.5.4 / 2011-03-19
+
+* Fixed a bug when parsing query params containing `&&&&`.
+
 ### 0.5.3 / 2011-03-11
 
 * Only require `uri/common` for `URI.escape` and `URI.unescape`.
