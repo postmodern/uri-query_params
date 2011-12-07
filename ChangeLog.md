@@ -1,3 +1,8 @@
+### 0.6.0 / 2011-12-06
+
+* Allow {URI::QueryParams.parse} to yield query-params, in the order they were
+  parsed.
+
 ### 0.5.4 / 2011-03-19
 
 * Fixed a bug when parsing query params containing `&&&&`.
