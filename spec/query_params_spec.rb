@@ -42,6 +42,28 @@ describe URI::QueryParams do
       query_params['x'].should == '1'
       query_params['y'].should == '2'
     end
+
+    context "when given a block" do
+      it "should yield the duplicate named query params" do
+        params = []
+
+        subject.parse('z=1&z=2&z=3') do |name,value|
+          params << [name, value]
+        end
+
+        params.should == [['z', '1'], ['z', '2'], ['z', '3']]
+      end
+
+      it "should yield the query params in the order they are parsed" do
+        params = []
+
+        subject.parse('z=1&y=2&x=3') do |name,value|
+          params << [name, value]
+        end
+
+        params.should == [['z', '1'], ['y', '2'], ['x', '3']]
+      end
+    end
   end
 
   describe "dump" do
