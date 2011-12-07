@@ -14,6 +14,15 @@ module URI
     # @param [String] query_string
     #   The URI query string.
     #
+    # @yield [name,value]
+    #   The given block will be passed each parsed query param.
+    #
+    # @yieldparam [String] name
+    #   The name of the query param.
+    #
+    # @yieldparam [String] value
+    #   The value of the query param.
+    #
     # @return [Hash{String => String}]
     #   The parsed query parameters.
     #
@@ -25,6 +34,10 @@ module URI
     #   QueryParams.parse("x=a%20b%20c&y")
     #   # => {"x"=>"a b c", "y"=>""}
     #
+    # @note
+    #   Version 0.6.0 allows {parse} to yield the query params, in the order
+    #   they are parsed.
+    #
     def QueryParams.parse(query_string)
       query_params = {}
 
@@ -34,12 +47,14 @@ module URI
           next if param.empty?
 
           name, value = param.split('=',2)
+          value = if value
+                    URI.unescape(value)
+                  else
+                    ''
+                  end
 
-          if value
-            query_params[name] = URI.unescape(value)
-          else
-            query_params[name] = ''
-          end
+          yield(name,value) if block_given?
+          query_params[name] = value
         end
       end
 
