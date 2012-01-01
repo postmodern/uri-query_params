@@ -1,3 +1,7 @@
+### 0.6.1 / 2011-12-31
+
+* Added white-space and unprintable characters to {URI::QueryParams::UNSAFE}.
+
 ### 0.6.0 / 2011-12-06
 
 * Allow {URI::QueryParams.parse} to yield query-params, in the order they were
