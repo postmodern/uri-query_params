@@ -1,1 +1,1 @@
-require 'uri/query_params/extensions/generic'
+require 'uri/query_params/extensions/uri'

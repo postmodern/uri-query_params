@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'query_params_mixin_examples'
-require 'uri/query_params/extensions/generic'
+require 'uri/query_params/extensions/uri'
 
 describe URI::Generic do
   let(:uri) { URI('/page.php') }
