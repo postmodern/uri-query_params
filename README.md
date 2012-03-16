@@ -35,6 +35,6 @@ Setting the URI query_params:
 
 ## License
 
-Copyright (c) 2010-2011 Hal Brodigan
+Copyright (c) 2010-2012 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
