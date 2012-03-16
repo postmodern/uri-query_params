@@ -29,6 +29,12 @@ Setting the URI query_params:
     url.to_s
     # => "http://www.google.com/search?btnG=Search&hs=1HY&rls=org.mozilla:en-US:official&client=firefox-a&hl=en&q=Upright%20Citizens%20Brigade"
 
+Parsing URI query_params embedded within the Fragment Identifier:
+
+    url = URI('https://twitter.com/#!/download?lang=en&logged_out=1')
+    URI(url.fragment).query_params
+    # => {"logged_out"=>"1", "lang"=>"en"}
+
 ## Install
 
     $ sudo gem install uri-query_params
