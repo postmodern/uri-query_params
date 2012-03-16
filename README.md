@@ -8,7 +8,7 @@
 ## Description
 
 Allows access to the query component of the URI as a Hash. This is similar
-to `$_GET` from PHP, except available on any {URI::HTTP} object.
+to `$_GET` from PHP, except available on any Ruby URI object.
 
 ## Examples
 
