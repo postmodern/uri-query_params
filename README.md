@@ -31,7 +31,7 @@ Setting the URI query_params:
 
 ## Install
 
-    $ sudo gem install uri-query_params
+    $ gem install uri-query_params
 
 ## License
 
