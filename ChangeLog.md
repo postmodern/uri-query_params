@@ -1,3 +1,8 @@
+### 0.6.2 / 2012-03-15
+
+* Fixed a query parameter ordering issue in {URI::QueryParams.dump},
+  under Ruby 1.8.x.
+
 ### 0.6.1 / 2011-12-31
 
 * Added white-space and unprintable characters to {URI::QueryParams::UNSAFE}.
