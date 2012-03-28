@@ -1,7 +1,7 @@
 ### 0.7.0 / 2012-03-27
 
 * Inject {URI::QueryParams::Mixin} into {URI::Generic}, so all URIs have
-  query_params.
+  `query_params`.
 * Inject {URI::QueryParams::Mixin} into `Addressable::URI`, if `addressable/uri`
   is loaded.
 
