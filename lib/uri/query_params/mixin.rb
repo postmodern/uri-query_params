@@ -10,6 +10,10 @@ module URI
       # Allows setting the query_params.
       attr_writer :query_params
 
+      #
+      # Called when {Mixin} is included into a URI Class. Overrides the `query`
+      # and `query=` methods to transparently update the {#query_params}.
+      #
       def self.included(base)
         base.module_eval do
           alias raw_query query
