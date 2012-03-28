@@ -8,7 +8,7 @@
 ## Description
 
 Allows access to the query component of the URI as a Hash. This is similar
-to `$_GET` from PHP, except available on any {URI::HTTP} object.
+to `$_GET` from PHP, except available on any Ruby URI object.
 
 ## Examples
 
@@ -28,6 +28,12 @@ Setting the URI query_params:
     url.query_params['q'] = 'Upright Citizens Brigade'
     url.to_s
     # => "http://www.google.com/search?btnG=Search&hs=1HY&rls=org.mozilla:en-US:official&client=firefox-a&hl=en&q=Upright%20Citizens%20Brigade"
+
+Parsing URI query_params embedded within the Fragment Identifier:
+
+    url = URI('https://twitter.com/#!/download?lang=en&logged_out=1')
+    URI(url.fragment).query_params
+    # => {"logged_out"=>"1", "lang"=>"en"}
 
 ## Install
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'query_params_mixin_examples'
-require 'uri/query_params/extensions/http'
+require 'uri/query_params/extensions/uri'
 
 describe URI::HTTP do
   let(:uri) { URI('http://www.example.com/page.php') }
