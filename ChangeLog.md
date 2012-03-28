@@ -1,3 +1,10 @@
+### 0.7.0 / 2012-03-27
+
+* Inject {URI::QueryParams::Mixin} into {URI::Generic}, so all URIs have
+  query_params.
+* Inject {URI::QueryParams::Mixin} into `Addressable::URI`, if `addressable/uri`
+  is loaded.
+
 ### 0.6.2 / 2012-03-15
 
 * Fixed a query parameter ordering issue in {URI::QueryParams.dump},
