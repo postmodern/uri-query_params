@@ -1,3 +1,8 @@
+### 0.7.1 / 2015-06-08
+
+* Fixed a Ruby 2.2 specific bug where `alias`es are defined before the method
+  they alias. (@iraupph)
+
 ### 0.7.0 / 2012-03-27
 
 * Inject {URI::QueryParams::Mixin} into {URI::Generic}, so all URIs have
