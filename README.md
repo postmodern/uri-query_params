@@ -1,7 +1,7 @@
 # URI query_params
 
-* [Source](http://github.com/postmodern/uri-query_params)
-* [Issues](http://github.com/postmodern/uri-query_params/issues)
+* [Source](https://github.com/postmodern/uri-query_params)
+* [Issues](https://github.com/postmodern/uri-query_params/issues)
 * [Documentation](http://rubydoc.info/gems/uri-query_params/frames)
 * [Email](mailto:postmodern.mod3 at gmail.com)
 

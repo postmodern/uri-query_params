@@ -2,7 +2,7 @@ name: uri-query_params
 summary: Access the query parameters of a URI, just like $_GET in PHP.
 description: Allows access to the query component of the URI as a Hash.
 license: MIT
-homepage: http://github.com/postmodern/uri-query_params
+homepage: https://github.com/postmodern/uri-query_params
 authors: Postmodern
 email: postmodern.mod3@gmail.com
 has_yard: true
