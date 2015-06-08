@@ -9,8 +9,6 @@ module URI
 
     private
 
-    alias raw_path_query path_query
-
     #
     # Parses the query parameters from the query data, populating
     # query_params with the parsed parameters.
@@ -34,6 +32,8 @@ module URI
         raw_path_query
       end
     end
+
+    alias raw_path_query path_query
 
   end
 end
