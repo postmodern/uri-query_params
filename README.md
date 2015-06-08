@@ -5,6 +5,8 @@
 * [Documentation](http://rubydoc.info/gems/uri-query_params/frames)
 * [Email](mailto:postmodern.mod3 at gmail.com)
 
+[![Build Status](https://secure.travis-ci.org/postmodern/uri-query_params.svg)](https://travis-ci.org/postmodern/uri-query_params)
+
 ## Description
 
 Allows access to the query component of the URI as a Hash. This is similar
