@@ -7,32 +7,51 @@ module URI
 
     include URI::QueryParams::Mixin
 
-    private
-
-    alias raw_path_query path_query
-
     #
-    # Parses the query parameters from the query data, populating
-    # query_params with the parsed parameters.
+    # Constructs String from URI
     #
-    # @see QueryParams.parse
+    # @note
+    #   This is the `URI::Generic#to_s` method from Ruby 2.2.0, with the minor
+    #   modification of calling the `query` method overrode by
+    #   {URI::QueryParams::Mixin}, instead of `@query`.
     #
-    # @since 0.5.2
+    # @see https://github.com/ruby/ruby/blob/v2_2_0/lib/uri/generic.rb#L1338-L1376
     #
-    def path_query
-      if @query_params
-        str = @path
-
-        unless @query_params.empty?
-          str += '?' + URI::QueryParams.dump(@query_params)
-        end
-
-        str
-      else
-        # do not rebuild the path-query, if the query_params have not
-        # been parsed yet
-        raw_path_query
+    def to_s
+      str = ''
+      if @scheme
+        str << @scheme
+        str << ':'.freeze
       end
+
+      if @opaque
+        str << @opaque
+      else
+        if @host
+          str << '//'.freeze
+        end
+        if self.userinfo
+          str << self.userinfo
+          str << '@'.freeze
+        end
+        if @host
+          str << @host
+        end
+        if @port && @port != self.default_port
+          str << ':'.freeze
+          str << @port.to_s
+        end
+        str << @path
+        if query
+          str << '?'.freeze
+          str << query
+        end
+      end
+      if @fragment
+        str << '#'.freeze
+        str << @fragment
+      end
+      str
     end
 
   end

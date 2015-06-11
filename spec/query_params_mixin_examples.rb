@@ -54,6 +54,12 @@ shared_examples_for "URI::QueryParams::Mixin" do
     end
   end
 
+  describe "#to_s" do
+    it "should include the #query_params" do
+      expect(subject.to_s.split('?',2).last).to eq(query)
+    end
+  end
+
   describe "#query_params" do
     subject { uri.query_params }
 
