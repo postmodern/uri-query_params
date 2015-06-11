@@ -63,6 +63,30 @@ module URI
     end
 
     #
+    # Escapes a URI query param value.
+    #
+    # @param [Array, true, false, nil, #to_s] value
+    #   The query param value to escape.
+    #
+    # @return [String]
+    #   The raw escaped query param value.
+    #
+    # @since 0.7.1
+    #
+    def self.escape(value)
+      case value
+      when Array
+        URI.escape(value.join(' '),UNSAFE)
+      when true
+        'active'
+      when false, nil
+        ''
+      else
+        URI.escape(value.to_s,UNSAFE)
+      end
+    end
+
+    #
     # Dumps the URI query params.
     #
     # @param [Hash{String => String}] query_params
@@ -92,16 +116,7 @@ module URI
       query_params.rehash if RUBY_VERSION < '1.9'
 
       query_params.each do |name,value|
-        value = case value
-                when Array
-                  URI.escape(value.join(' '),UNSAFE)
-                when true
-                  'active'
-                when false, nil
-                  ''
-                else
-                  URI.escape(value.to_s,UNSAFE)
-                end
+        value = escape(value)
 
         query << "#{name}=#{value}"
       end
