@@ -112,7 +112,7 @@ module URI
         query_params.each(&block)
       end
 
-      protected
+      private
 
       #
       # Parses the query parameters from the query data, populating
