@@ -39,6 +39,8 @@ module URI
     #   Version 0.6.0 allows {parse} to yield the query params, in the order
     #   they are parsed.
     #
+    # @api semipublic
+    #
     def self.parse(query_string)
       query_params = {}
 
@@ -72,6 +74,8 @@ module URI
     #   The raw escaped query param value.
     #
     # @since 0.7.1
+    #
+    # @api semipublic
     #
     def self.escape(value)
       case value
@@ -108,6 +112,8 @@ module URI
     #   # => "x=a%20b%20c"
     #
     # @since 0.5.0
+    #
+    # @api semipublic
     #
     def self.dump(query_params)
       query = []
