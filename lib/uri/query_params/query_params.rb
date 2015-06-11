@@ -39,7 +39,7 @@ module URI
     #   Version 0.6.0 allows {parse} to yield the query params, in the order
     #   they are parsed.
     #
-    def QueryParams.parse(query_string)
+    def self.parse(query_string)
       query_params = {}
 
       if query_string
@@ -85,7 +85,7 @@ module URI
     #
     # @since 0.5.0
     #
-    def QueryParams.dump(query_params)
+    def self.dump(query_params)
       query = []
 
       # explicitly re-order the Hash on Ruby 1.8.x
