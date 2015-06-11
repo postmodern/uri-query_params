@@ -1,7 +1,12 @@
-### 0.7.1 / 2015-06-08
+### 0.7.1 / 2015-06-11
 
 * Fixed a Ruby 2.2 specific bug where `alias`es are defined before the method
   they alias. (@iraupph)
+* Removed the `URI::Generic#path_query` monkeypatch.
+* Override {URI::Generic#to_s} to call the `query` method overrode by
+  {URI::QueryParams::Mixin}, instead of `@query`. Starting in Ruby 2.2.0,
+  `path_query` was inlined directly into `URI::Generic#to_s` which broke our
+  `path_query` monkeypatch.
 
 ### 0.7.0 / 2012-03-27
 
