@@ -35,7 +35,7 @@ shared_examples_for "URI::QueryParams::Mixin" do
   it "should properly escape query param values" do
     subject.query_params = {'x' => '1&2', 'y' => 'one=two', 'z' => '?'}
 
-    expect(subject.to_s.match(/\?(.+)$/)[1]).to eq("x=1%262&y=one%3Dtwo&z=%3F")
+    expect(subject.query).to eq("x=1%262&y=one%3Dtwo&z=%3F")
   end
 
   it "should deep-copy the query_params Hash" do
