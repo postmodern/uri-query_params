@@ -1,10 +1,10 @@
-Gemfile.lock
-doc
-pkg
-tmp/*
+/Gemfile.lock
+/doc/
+/pkg/
+/vendor/bundle
+/.bundle
+/.yardoc
 .DS_Store
-.bundle
-.yardoc
 *.db
 *.log
 *.swp
