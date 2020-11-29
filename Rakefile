@@ -1,10 +1,4 @@
-begin
-  require 'bundler/setup'
-rescue LoadError => e
-  abort e.message
-end
-
-require 'rake'
+require 'rubygems'
 
 require 'rubygems/tasks'
 Gem::Tasks.new
