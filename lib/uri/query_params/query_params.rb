@@ -51,7 +51,7 @@ module URI
 
           name, value = param.split('=',2)
           value = if value
-                    URI.unescape(value)
+                    URI::DEFAULT_PARSER.unescape(value)
                   else
                     ''
                   end
@@ -80,13 +80,13 @@ module URI
     def self.escape(value)
       case value
       when Array
-        URI.escape(value.join(' '),UNSAFE)
+        URI::DEFAULT_PARSER.escape(value.join(' '),UNSAFE)
       when true
         'active'
       when false, nil
         ''
       else
-        URI.escape(value.to_s,UNSAFE)
+        URI::DEFAULT_PARSER.escape(value.to_s,UNSAFE)
       end
     end
 
