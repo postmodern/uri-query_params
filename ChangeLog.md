@@ -1,3 +1,8 @@
+### 0.7.2 / 2020-11-29
+
+* Use `URI::DEFAULT_PARSER.escape` / `.unescape` instead of the deprecated
+  `URI.escape` / `URI.unescape`.
+
 ### 0.7.1 / 2015-06-11
 
 * Fixed a Ruby 2.2 specific bug where `alias`es are defined before the method
