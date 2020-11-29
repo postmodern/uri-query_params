@@ -43,6 +43,6 @@ Parsing URI query_params embedded within the Fragment Identifier:
 
 ## License
 
-Copyright (c) 2010-2015 Hal Brodigan
+Copyright (c) 2010-2020 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
