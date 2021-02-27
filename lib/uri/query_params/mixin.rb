@@ -29,10 +29,8 @@ module URI
           # @since 0.5.2
           #
           def query
-            if @query_params
-              URI::QueryParams.dump(@query_params)
-            else
-              raw_query
+            if @query_params then URI::QueryParams.dump(@query_params)
+            else                  raw_query
             end
           end
 

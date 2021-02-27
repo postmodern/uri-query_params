@@ -50,10 +50,8 @@ module URI
           next if param.empty?
 
           name, value = param.split('=',2)
-          value = if value
-                    URI::DEFAULT_PARSER.unescape(value)
-                  else
-                    ''
+          value = if value then URI::DEFAULT_PARSER.unescape(value)
+                  else          ''
                   end
 
           yield(name,value) if block_given?
@@ -79,14 +77,10 @@ module URI
     #
     def self.escape(value)
       case value
-      when Array
-        URI::DEFAULT_PARSER.escape(value.join(' '),UNSAFE)
-      when true
-        'active'
-      when false, nil
-        ''
-      else
-        URI::DEFAULT_PARSER.escape(value.to_s,UNSAFE)
+      when Array      then URI::DEFAULT_PARSER.escape(value.join(' '),UNSAFE)
+      when true       then 'active'
+      when false, nil then ''
+      else                 URI::DEFAULT_PARSER.escape(value.to_s,UNSAFE)
       end
     end
 
@@ -122,9 +116,7 @@ module URI
       query_params.rehash if RUBY_VERSION < '1.9'
 
       query_params.each do |name,value|
-        value = escape(value)
-
-        query << "#{name}=#{value}"
+        query << "#{name}=#{escape(value)}"
       end
 
       return query.join('&')
