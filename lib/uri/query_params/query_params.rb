@@ -110,13 +110,9 @@ module URI
     # @api semipublic
     #
     def self.dump(query_params)
-      query = []
-
-      query_params.each do |name,value|
-        query << "#{name}=#{escape(value)}"
-      end
-
-      return query.join('&')
+      query_params.map { |name,value|
+        "#{name}=#{escape(value)}"
+      }.join('&')
     end
 
   end
