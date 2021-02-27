@@ -112,9 +112,6 @@ module URI
     def self.dump(query_params)
       query = []
 
-      # explicitly re-order the Hash on Ruby 1.8.x
-      query_params.rehash if RUBY_VERSION < '1.9'
-
       query_params.each do |name,value|
         query << "#{name}=#{escape(value)}"
       end
