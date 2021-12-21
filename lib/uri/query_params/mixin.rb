@@ -29,8 +29,10 @@ module URI
           # @since 0.5.2
           #
           def query
-            if @query_params then URI::QueryParams.dump(@query_params)
-            else                  raw_query
+            if defined?(@query_params) && @query_params
+              URI::QueryParams.dump(@query_params)
+            else
+              raw_query
             end
           end
 
@@ -54,7 +56,7 @@ module URI
           def query=(new_query)
             new_query = (self.raw_query = new_query)
 
-            parse_query_params! if @query_params
+            parse_query_params! if defined?(@query_params) && @query_params
             return new_query
           end
         end
