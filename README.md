@@ -37,7 +37,7 @@ Parsing URI query_params embedded within the Fragment Identifier:
 
 ## Requirements
 
-* [Ruby][ruby] >= 2.0.0
+* [ruby] >= 2.0.0
 
 ## Install
 
