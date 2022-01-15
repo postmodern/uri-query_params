@@ -12,6 +12,7 @@ metadata:
   source_code_uri:   https://github.com/postmodern/uri-query_params.rb
   bug_tracker_uri:   https://github.com/postmodern/uri-query_params.rb/issues
   changelog_uri:     https://github.com/postmodern/uri-query_params.rb/blob/master/ChangeLog.md
+  rubygems_mfa_required: 'true'
 
 required_ruby_version: ">= 2.0.0"
 
