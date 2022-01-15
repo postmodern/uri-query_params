@@ -1,2 +1,1 @@
-require 'uri/query_params/extensions/uri'
-require 'uri/query_params/extensions/addressable/uri' if defined?(Addressable)
+require 'uri/query_params/core_ext'
