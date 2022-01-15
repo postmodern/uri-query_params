@@ -1,9 +1,13 @@
 require 'spec_helper'
-require 'query_params_mixin_examples'
-require 'uri/query_params/extensions/uri'
+require 'uri/query_params/extensions/uri/generic'
 
-describe URI::Generic do
-  let(:uri) { URI('/page.php') }
+describe 'uri/query_params/extensions/uri/generic' do
+  let(:root) { File.expand_path(File.join('..','..','..'),__dir__) }
+  let(:path) do
+    File.join(root,'lib','uri','query_params','core_ext', 'uri','generic.rb')
+  end
 
-  it_should_behave_like "URI::QueryParams::Mixin"
+  it "must require 'uri/query_params/core_ext/uri/generic'" do
+    expect($LOADED_FEATURES).to include(path)
+  end
 end
