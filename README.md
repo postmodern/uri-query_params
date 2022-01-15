@@ -35,6 +35,10 @@ Parsing URI query_params embedded within the Fragment Identifier:
     URI(url.fragment).query_params
     # => {"logged_out"=>"1", "lang"=>"en"}
 
+## Requirements
+
+* [Ruby][ruby] >= 2.0.0
+
 ## Install
 
     $ gem install uri-query_params
@@ -44,3 +48,5 @@ Parsing URI query_params embedded within the Fragment Identifier:
 Copyright (c) 2010-2022 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
+
+[ruby]: https://www.ruby-lang.org/
