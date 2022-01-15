@@ -1,3 +1,10 @@
+### 0.8.0 / 2022-01-14
+
+* Require [ruby] >= 2.0.0.
+* Renamed `uri/query_params/extensions` to `uri/query_params/core_ext`.
+* Removed legacy [ruby] 1.8 code.
+* Fix instance variable warnings in `uri/query_params/mixin`.
+
 ### 0.7.2 / 2020-11-29
 
 * Use `URI::DEFAULT_PARSER.escape` / `.unescape` instead of the deprecated
@@ -70,3 +77,4 @@
 
 * Initial release.
 
+[ruby]: https://www.ruby-lang.org/
