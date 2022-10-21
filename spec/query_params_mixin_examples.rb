@@ -6,9 +6,7 @@ require 'uri'
 shared_examples_for "URI::QueryParams::Mixin" do
   let(:query) { 'x=1&y=one%20two&z' }
 
-  subject { uri }
-
-  before(:each) { uri.query = query }
+  before { subject.query = query }
 
   context "when included" do
     it "should include QueryParams::Mixin" do
@@ -16,11 +14,11 @@ shared_examples_for "URI::QueryParams::Mixin" do
     end
 
     it "should still provide access to #query" do
-      expect(uri.query).to eq(query)
+      expect(subject.query).to eq(query)
     end
 
     it "should provide #query_params" do
-      is_expected.to respond_to(:query_params)
+      expect(subject).to respond_to(:query_params)
     end
   end
 
@@ -44,6 +42,7 @@ shared_examples_for "URI::QueryParams::Mixin" do
   describe "#query" do
     it "should dump out the #query_params when accessing #query" do
       subject.query_params = {'u' => '3'}
+
       expect(subject.query).to eq('u=3')
     end
 
@@ -61,26 +60,24 @@ shared_examples_for "URI::QueryParams::Mixin" do
   end
 
   describe "#query_params" do
-    subject { uri.query_params }
-
     it "should be a Hash" do
-      expect(subject.class).to eq(Hash)
+      expect(subject.query_params.class).to eq(Hash)
     end
 
     it "should contain params" do
-      is_expected.not_to be_empty
+      expect(subject.query_params).not_to be_empty
     end
 
     it "can contain single-word params" do
-      expect(subject['x']).to eq('1')
+      expect(subject.query_params['x']).to eq('1')
     end
 
     it "can contain multi-word params" do
-      expect(subject['y']).to eq('one two')
+      expect(subject.query_params['y']).to eq('one two')
     end
 
     it "can contain empty params" do
-      expect(subject['z']).to be_empty
+      expect(subject.query_params['z']).to be_empty
     end
   end
 end
