@@ -1,3 +1,9 @@
+### 0.8.1 / 2022-10-21
+
+* Updated {URI::Generic#to_s} to ruby-3.0.0.
+* Override {URI::HTTP#request_uri} to be aware of
+  {URI::QueryParams::Mixin#query_params}.
+
 ### 0.8.0 / 2022-01-14
 
 * Require [ruby] >= 2.0.0.
