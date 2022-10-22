@@ -24,7 +24,7 @@ module URI
     #   # => "/path?foo=1&bar=2"
     #
     def request_uri
-      if defined?(@query_params) && @query_params && !@query_params.empty?
+      if defined?(@query_params) && @query_params
         return unless @path
 
         query = URI::QueryParams.dump(@query_params)
