@@ -1,4 +1,4 @@
-### 0.8.1 / 2022-10-21
+### 0.8.1 / 2022-10-22
 
 * Updated {URI::Generic#to_s} to ruby-3.0.0.
 * Override {URI::HTTP#request_uri} to be aware of
