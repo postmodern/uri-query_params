@@ -1,3 +1,8 @@
+### 0.8.2 / 2024-01-25
+
+* Switched to using `require_relative` to improve load-times.
+* Added `# frozen_string_literal: true` to all files.
+
 ### 0.8.1 / 2022-10-22
 
 * Updated {URI::Generic#to_s} to ruby-3.0.0.
