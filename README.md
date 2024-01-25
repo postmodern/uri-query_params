@@ -46,7 +46,9 @@ URI(url.fragment).query_params
 
 ## Install
 
-    $ gem install uri-query_params
+```shell
+$ gem install uri-query_params
+```
 
 ## License
 
