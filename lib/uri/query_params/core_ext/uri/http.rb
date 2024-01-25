@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'uri/query_params/core_ext/uri/generic'
+require_relative 'generic'
 
 require 'uri/http'
 

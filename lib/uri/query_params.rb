@@ -1,2 +1,2 @@
-require 'uri/query_params/query_params'
-require 'uri/query_params/core_ext'
+require_relative 'query_params/query_params'
+require_relative 'query_params/core_ext'

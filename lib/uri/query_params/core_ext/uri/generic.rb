@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'uri/query_params/mixin'
+require_relative '../../mixin'
 
 require 'uri/generic'
 

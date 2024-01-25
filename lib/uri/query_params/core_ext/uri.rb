@@ -1,2 +1,2 @@
-require 'uri/query_params/core_ext/uri/generic'
-require 'uri/query_params/core_ext/uri/http'
+require_relative 'uri/generic'
+require_relative 'uri/http'

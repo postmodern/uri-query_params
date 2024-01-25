@@ -1,4 +1,4 @@
-require 'uri/query_params/query_params'
+require_relative 'query_params'
 
 module URI
   module QueryParams

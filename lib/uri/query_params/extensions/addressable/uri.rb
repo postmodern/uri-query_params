@@ -1,1 +1,1 @@
-require 'uri/query_params/core_ext/addressable/uri'
+require_relative '../../core_ext/addressable/uri'
