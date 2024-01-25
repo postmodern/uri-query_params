@@ -50,8 +50,6 @@ URI(url.fragment).query_params
 
 ## License
 
-Copyright (c) 2010-2022 Hal Brodigan
-
 See {file:LICENSE.txt} for license information.
 
 [ruby]: https://www.ruby-lang.org/
