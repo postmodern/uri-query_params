@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'uri/query_params/mixin'
 
 require 'addressable/uri'

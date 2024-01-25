@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'uri/common'
 
 module URI
@@ -78,8 +80,8 @@ module URI
     def self.escape(value)
       case value
       when Array      then URI::DEFAULT_PARSER.escape(value.join(' '),UNSAFE)
-      when true       then 'active'
-      when false, nil then ''
+      when true       then String.new('active')
+      when false, nil then String.new('')
       else                 URI::DEFAULT_PARSER.escape(value.to_s,UNSAFE)
       end
     end
